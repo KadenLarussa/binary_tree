@@ -1,3 +1,6 @@
+// Kaden Larussa
+// w0762283
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -19,7 +22,7 @@ public:
 
     Tree() : root(nullptr), compareCount(0) {}
 
-    treeNode* makeTreeNode(int num) {
+    static treeNode* makeTreeNode(int num) {
         return new treeNode(num);
     }
 
@@ -61,7 +64,7 @@ public:
         inOrderRecursive(node->right, os);
     }
 
-    void inOrderIterative(std::ostream& os) {
+    void inOrderIterative(std::ostream& os) const {
         std::stack<treeNode*> stack;
         treeNode* current = root;
         while (!stack.empty() || current) {
